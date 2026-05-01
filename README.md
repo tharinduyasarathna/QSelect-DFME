@@ -37,12 +37,14 @@ This work:
 
 ## 📊 Datasets
 
-- NSL-KDD  
-- UNSW-NB15  
-- CIC-IDS2017  
-- CICIoT2023  
-- InSDN  
-- ASEADOS-SDN-IoT  
+- [NSL-KDD](https://www.unb.ca/cic/datasets/nsl.html)  
+- [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset)  
+- [CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html)  
+- [CICIoT2023](https://www.unb.ca/cic/datasets/iotdataset-2023.html)  
+- [InSDN](https://github.com/CanadianInstituteForCybersecurity/InSDN)  
+- [ASEADOS-SDN-IoT](https://aseados.ucd.ie/datasets/SDN-IoT/)  
+
+> Download datasets and place them inside the `data/` directory.
 
 ---
 
@@ -68,12 +70,6 @@ python3 -m experiments.qselect_dfme_score_binary
 python3 -m experiments.tabextractor_score_binary
 python3 -m experiments.tempest_score_binary
 ```
-
----
-
-## 📁 Data
-
-Place datasets inside `data/`.
 
 ---
 
