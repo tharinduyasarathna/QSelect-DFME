@@ -1,0 +1,39 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.18}
+\caption{CIC-IDS2017: low-budget extraction summary (budget cap $\leq$2048 queries).
+AUC and QPS are reported at the last logged point $\leq$2048 (fallback: nearest).
+Best $\rho_{\le2k}$ is the maximum Spearman value observed for any logged point with $q\le2048$ (reported for reference; not used to select Winner).
+For $q_{\rho\ge\tau}$, smaller is better. For QPS, smaller is better (stealth).
+Best values per victim across methods are bolded; \textit{Winner} is computed via weighted rank aggregation (RQ3.2).}
+\label{tab:cic_ids2017_2k}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrl}
+\toprule
+Victim & Method & AUC@2k & Best $\rho_{\le2k}$ & QPS@2k & $q_{\rho\ge0.60}$ & $q_{\rho\ge0.75}$ & $q_{\rho\ge0.85}$ & Winner \\
+\midrule
+\multirow{3}{*}{pyod-AE} & QSelDFME & \textbf{0.853} & \textbf{0.926} & \textbf{139} & 64 & 64 & \textbf{64} & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.843 & 0.842 & 14444 & \textbf{50} & \textbf{50} & 50000 &  \\
+ & TabExtractor & 0.749 & 0.615 & 790 & 256 & 10240 & 50176 &  \\
+\midrule
+\multirow{3}{*}{pyod-VAE} & QSelDFME & 0.791 & 0.917 & \textbf{138} & 64 & 64 & 64 & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & \textbf{0.849} & \textbf{0.954} & 13185 & \textbf{50} & \textbf{50} & \textbf{50} &  \\
+ & TabExtractor & 0.349 & -0.044 & 762 & 10240 & 50176 & 50176 &  \\
+\midrule
+\multirow{3}{*}{pyod-DeepSVDD} & QSelDFME & \textbf{0.840} & \textbf{0.954} & \textbf{156} & \textbf{64} & \textbf{64} & \textbf{64} & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.773 & 0.688 & 13504 & 2000 & 5000 & 500000 &  \\
+ & TabExtractor & 0.804 & 0.581 & 1537 & 10240 & 10240 & 50176 &  \\
+\midrule
+\multirow{3}{*}{DRocc} & QSelDFME & \textbf{0.472} & \textbf{0.780} & \textbf{144} & \textbf{1008} & \textbf{1504} & - & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.198 & 0.330 & 15816 & 50000 & 100000 & \textbf{100000} &  \\
+ & TabExtractor & 0.250 & 0.122 & 1550 & - & - & - &  \\
+\midrule
+\multirow{3}{*}{NeuTraL-AD} & QSelDFME & 0.772 & \textbf{0.715} & \textbf{143} & \textbf{64} & - & - & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & \textbf{0.806} & 0.586 & 13017 & - & - & - &  \\
+ & TabExtractor & 0.699 & 0.643 & 1348 & 1024 & - & - &  \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

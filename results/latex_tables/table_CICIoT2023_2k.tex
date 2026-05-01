@@ -1,0 +1,39 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.18}
+\caption{CICIoT2023: low-budget extraction summary (budget cap $\leq$2048 queries).
+AUC and QPS are reported at the last logged point $\leq$2048 (fallback: nearest).
+Best $\rho_{\le2k}$ is the maximum Spearman value observed for any logged point with $q\le2048$ (reported for reference; not used to select Winner).
+For $q_{\rho\ge\tau}$, smaller is better. For QPS, smaller is better (stealth).
+Best values per victim across methods are bolded; \textit{Winner} is computed via weighted rank aggregation (RQ3.2).}
+\label{tab:ciciot2023_2k}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrl}
+\toprule
+Victim & Method & AUC@2k & Best $\rho_{\le2k}$ & QPS@2k & $q_{\rho\ge0.60}$ & $q_{\rho\ge0.75}$ & $q_{\rho\ge0.85}$ & Winner \\
+\midrule
+\multirow{3}{*}{pyod-AE} & QSelDFME & 0.384 & \textbf{0.310} & \textbf{135} & - & - & - & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.178 & -0.082 & 14990 & - & - & - &  \\
+ & TabExtractor & \textbf{0.392} & 0.097 & 1033 & - & - & - &  \\
+\midrule
+\multirow{3}{*}{pyod-VAE} & QSelDFME & 0.372 & \textbf{0.333} & \textbf{142} & - & - & - & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.178 & -0.071 & 14546 & - & - & - &  \\
+ & TabExtractor & \textbf{0.400} & -0.009 & 925 & - & - & - &  \\
+\midrule
+\multirow{3}{*}{pyod-DeepSVDD} & QSelDFME & \textbf{0.364} & \textbf{0.588} & \textbf{158} & - & - & - & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.247 & 0.333 & 16549 & \textbf{50000} & \textbf{500000} & \textbf{500000} &  \\
+ & TabExtractor & 0.303 & 0.002 & 1479 & - & - & - &  \\
+\midrule
+\multirow{3}{*}{DRocc} & QSelDFME & \textbf{0.992} & \textbf{0.961} & \textbf{122} & 64 & 112 & \textbf{208} & \multirow{3}{*}{QSelDFME} \\
+ & TEMPEST & 0.987 & 0.954 & 14849 & \textbf{50} & \textbf{50} & 2000 &  \\
+ & TabExtractor & 0.971 & 0.905 & 1757 & 256 & 512 & 1024 &  \\
+\midrule
+\multirow{3}{*}{NeuTraL-AD} & QSelDFME & 0.468 & -0.054 & \textbf{145} & 1000000 & - & - & \multirow{3}{*}{TabExtractor} \\
+ & TEMPEST & 0.184 & -0.708 & 15019 & 50000 & \textbf{100000} & - &  \\
+ & TabExtractor & \textbf{0.728} & \textbf{0.627} & 1702 & \textbf{256} & - & - &  \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
