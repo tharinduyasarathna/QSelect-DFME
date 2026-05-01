@@ -41,7 +41,7 @@ This work:
 - [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset)  
 - [CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html)  
 - [CICIoT2023](https://www.unb.ca/cic/datasets/iotdataset-2023.html)  
-- [InSDN](https://github.com/CanadianInstituteForCybersecurity/InSDN)  
+- [InSDN](https://aseados.ucd.ie/datasets/SDN/)  
 - [ASEADOS-SDN-IoT](https://aseados.ucd.ie/datasets/SDN-IoT/)  
 
 > Download datasets and place them inside the `data/` directory.
