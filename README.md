@@ -18,7 +18,7 @@ This work:
 ## 🚀 Key Features
 
 - Query-efficient extraction (≤ 2k queries)  
-- Manifold-guided filtering (PCA-based)  
+- Student-uncertainty candidate filtering 
 - Diversity-aware query selection (k-center)  
 - Ranking-aligned optimization  
 - Designed for black-box SDN-IoT settings  
