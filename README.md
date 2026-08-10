@@ -28,7 +28,7 @@ This work:
 ## 🏗️ Method Pipeline
 
 1. Generate a synthetic candidate pool  
-2. Apply manifold filtering  
+2. Apply student-uncertainty candidate filtering  
 3. Select diverse queries  
 4. Query target model  
 5. Train surrogate model  
